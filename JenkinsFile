@@ -1,0 +1,14 @@
+pipeline{
+stages{
+stage('checkout'){
+steps{
+git ''
+}
+stage('publish'){
+steps{
+
+}
+}
+}
+}
+}

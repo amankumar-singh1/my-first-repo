@@ -1,14 +1,20 @@
 pipeline{
+agent any
 stages{
-stage('checkout'){
+stage("Checkout"){
 steps{
-git ''
+git "https://github.com/amankumar-singh1/my-first-repo.git"
 }
-stage('publish'){
+}
+stage("Publish"){
 steps{
-
-}
-}
+publishHTML([
+allowMissing:true,
+alwaysLinkToLastBuild:false,
+keepAll:false,
+reportDir:'.',
+reportFiles:'first.html',
+reportName:"Name Here"])
 }
 }
 }
